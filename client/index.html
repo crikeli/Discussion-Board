@@ -1,0 +1,30 @@
+<html ng-app="Discussion_Board">
+<head>
+	<title>Discussion Board</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+
+	<!-- angular source -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+
+
+	<!-- ng routes -->
+	<script type="text/javascript" src="ng_routes.js"></script>
+
+	<!-- ng controllers -->
+	<script type="text/javascript" src="/ng_controllers/users_controller.js"></script>
+	<script type="text/javascript" src="/ng_controllers/topics_controller.js"></script>
+
+	<!-- ng factories -->
+	<script type="text/javascript" src="/ng_factories/user_factory.js"></script>
+	<script type="text/javascript" src="/ng_factories/topic_factory.js"></script>
+
+</head>
+<body>
+
+	<div ng-view="" ng-controller="usersController">
+	</div>
+
+</body>
+</html>

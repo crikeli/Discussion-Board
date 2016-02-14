@@ -1,0 +1,17 @@
+		<div>
+	  			<li>Discussion Board</li>
+	  			<li><a href="#/dashboard">Dashboard</a></li>
+	  			<li class="nav_link navbar-right"><a href="#/">Log off</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div ng-controller='usersController'>
+		<h3>Username: {{user.name}}</h3>
+		<h4>Posted...</h4>
+		<ul>
+			<li>{{user.num_topics}} Topic(s)</li>
+			<li>{{user.num_answers}} Answer(s)</li>
+			<li>{{user.num_comments}} Comment(s)</li>
+		</ul>
+	</div>
+</div>

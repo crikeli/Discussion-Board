@@ -1,0 +1,36 @@
+<div id ="wrapper">
+		<div style="text-align: center;">
+	  			<li> Discussion Board</li>
+	  			<li> <a href="#/dashboard">Dashboard</a> </li>
+	  			<li> <a href="#/">Log off</a> </li>
+			</ul>
+		</div>
+
+	<div ng-controller='topicsController'>
+		<h4><a href="#/user/{{topic.user_id}}">{{topic.user}}</a> posted a topic: </h4>
+		<p>Topic: {{topic.topic}}</p>
+		<p>Description: {{topic.description}}</p>
+		<form>
+			<h5>Post your answer here...</h5>
+			<textarea ng-model="new_answer.answer"></textarea>
+			<button ng-click="createAnswer(new_answer, topic._id)">Post Answer</button>
+		</form>
+
+		<p>{{vote_error}}</p>
+		<div ng-repeat="answer in topic.answers | orderBy:'created_at':'-'">
+			<p><a href="#/user/{{answer.user_id}}">{{answer.user}}</a>: {{answer.answer}}</p>
+			<div>
+				<p>({{answer.up_votes}})</p>
+				<button ng-click="upVote(topic._id, answer._id, answer.user_id)">UpVote!</button>
+
+				<button ng-click="downVote(topic._id, answer._id, answer.user_id)">DownVote!</button>
+				<p>({{answer.down_votes}})</p>
+			</div>
+			<p class="comments_comments" ng-repeat="comment in answer.comments | orderBy:'created_at':'-'"><a href="#/user/{{comment.user_id}}">{{comment.user}}</a>: {{comment.comment}}</p>
+			<form>
+				<textarea placeholder="comment..." class="form-control" ng-model="new_comment.comment"></textarea>
+				<button ng-click="createComment(new_comment, answer._id, topic._id)">Post Comment</button>
+			</form>
+		</div>
+	</div>
+</div>

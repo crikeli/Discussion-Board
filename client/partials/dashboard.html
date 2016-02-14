@@ -1,0 +1,53 @@
+<div id ="wrapper" style="text-align: center;">
+		<div>
+	  			<p >Discussion Board</p>
+	  			<p >Welcome {{current_user.name}} !</p>
+	  			<p class="nav_link navbar-right"><a href="#/">Log off</a></p>
+		</div>
+	<div ng-controller='topicsController' style="text-align: center;">
+		<div>
+			<label>
+				<input type="text" ng-model="filter_name" placeholder="filter...">
+			</label>
+			<table>
+				<thead>
+					<th>Category</th>
+					<th>Topic</th>
+					<th>User Name</th>
+					<th># of Answers</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="topic in topics | filter:filter_name">
+						<td>{{topic.category}}</td>
+						<td><a href="#/topic/{{topic._id}}">{{topic.topic}}</a></td>
+						<td><a href="#/user/{{topic.user_id}}">{{topic.user}}</a></td>
+						<td>{{topic.num_answers}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<form>
+			<h3>Add a new Topic</h3>
+
+			<p>
+				Topic: <input type="text" ng-model="new_topic.topic">
+			</p>
+			<p>
+				Description: <textarea ng-model="new_topic.description"></textarea>
+			</p>
+			<p>
+				Category:
+				<select ng-model="new_topic.category">
+					<option>Javascript</option>
+					<option>Node</option>
+					<option>Angular</option>
+					<option>Backbone</option>
+					<option>Underscore</option>
+					<option>Mongoose</option>
+				</select>
+			</p>
+			<button ng-click="createTopic(new_topic)">Submit</button>
+		</form>
+	</div>
+</div>
+		
