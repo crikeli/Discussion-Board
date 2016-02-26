@@ -1,23 +1,46 @@
-<div id ="wrapper" style="text-align: center;">
-		<div>
-	  			<p >Discussion Board</p>
-	  			<p >Welcome {{current_user.name}} !</p>
-	  			<p class="nav_link navbar-right"><a href="#/">Log off</a></p>
+<div id ="wrapper">
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+		  			<li> <a href="#/">Log off</a> </li>
+				</ul>
+			</div>
 		</div>
-	<div ng-controller='topicsController' style="text-align: center;">
+	</nav>
+
+		<!-- <a href="#/" class="btn btn-link">Log off</a> -->
+		<!-- <p class="nav_link navbar-right"><a href="#/">Log off</a></p> -->
+		<div style="text-align: center;">
+	  			<h1>Discussion Board</h1>
+	  			<h2>Welcome {{current_user.name}} !</h2>
+	  			<!-- <p class="nav_link navbar-right"><a href="#/">Log off</a></p> -->
+		</div>
+	<div ng-controller='topicsController'>
+
+		<div class="form-group">
+				      <!-- <label for="inputFilter" class="col-lg-2 control-label">Filter</label> -->
+				      <div class="col-lg-10">
+				        <input type="text" ng-model="filter_name" placeholder="Filter">
+				      </div>
+		</div>
+
 		<div>
-			<label>
+			<!-- <label>
 				<input type="text" ng-model="filter_name" placeholder="filter...">
-			</label>
-			<table>
+			</label> -->
+			<table class="table table-striped table-hover">
 				<thead>
-					<th>Category</th>
-					<th>Topic</th>
-					<th>User Name</th>
-					<th># of Answers</th>
+					<tr>
+						<th>Category</th>
+						<th>Topic</th>
+						<th>User Name</th>
+						<th># of Answers</th>
+					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="topic in topics | filter:filter_name">
+					<tr ng-repeat="topic in topics | filter:filter_name" class="info">
 						<td>{{topic.category}}</td>
 						<td><a href="#/topic/{{topic._id}}">{{topic.topic}}</a></td>
 						<td><a href="#/user/{{topic.user_id}}">{{topic.user}}</a></td>
@@ -26,28 +49,50 @@
 				</tbody>
 			</table>
 		</div>
-		<form>
-			<h3>Add a new Topic</h3>
 
-			<p>
-				Topic: <input type="text" ng-model="new_topic.topic">
-			</p>
-			<p>
-				Description: <textarea ng-model="new_topic.description"></textarea>
-			</p>
-			<p>
-				Category:
-				<select ng-model="new_topic.category">
-					<option>Javascript</option>
-					<option>Node</option>
-					<option>Angular</option>
-					<option>Backbone</option>
-					<option>Underscore</option>
-					<option>Mongoose</option>
-				</select>
-			</p>
-			<button ng-click="createTopic(new_topic)">Submit</button>
+		<form class="form-horizontal">
+			<fieldset>
+				<legend style="text-align: left;">Add a new Topic</legend>
+					<div class="form-group">
+				      <label for="inputTopic" class="col-lg-2 control-label">Topic</label>
+				      <div class="col-lg-10">
+				        <input type="text" ng-model="new_topic.topic" placeholder="Enter Topic">
+				      </div>
+				    </div>
+
+				    <div class="form-group">
+				      <label for="inputDescription" class="col-lg-2 control-label">Description</label>
+				      <div class="col-lg-10">
+				        <textarea class="form-control" rows="3" type="text" ng-model="new_topic.description" placeholder="Enter Description"></textarea>
+				      </div>
+				    </div>
+				<!-- <p>
+					Topic: <input type="text" ng-model="new_topic.topic">
+				</p> -->
+				<!-- <p>
+					Description: <textarea ng-model="new_topic.description"></textarea>
+				</p> -->
+				<div class="form-group">
+					<label for="select" class="col-lg-2 control-label">Category</label>
+					<div class="col-lg-10">
+						<select class="form-control" id="select" ng-model="new_topic.category">
+							<option>Javascript</option>
+							<option>Node</option>
+							<option>Angular</option>
+							<option>Backbone</option>
+							<option>Underscore</option>
+							<option>Mongoose</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+      				<div class="col-lg-10 col-lg-offset-2">
+						<button ng-click="createTopic(new_topic)" class="btn btn-primary">Submit</button>
+					</div>
+				</div>
+			</fieldset>
 		</form>
+
 	</div>
 </div>
 		

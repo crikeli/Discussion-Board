@@ -1,10 +1,26 @@
 <div id ="wrapper">
-		<div style="text-align: center;">
-	  			<li> Discussion Board</li>
-	  			<li> <a href="#/dashboard">Dashboard</a> </li>
-	  			<li> <a href="#/">Log off</a> </li>
-			</ul>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+
+		<div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">Discussion Board</a>
+    </div>
+
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+		  			<li> <a href="#/dashboard">Dashboard</a> </li>
+		  			<li> <a href="#/">Log off</a> </li>
+				</ul>
+			</div>
 		</div>
+	</nav>
 
 	<div ng-controller='topicsController'>
 		<h4><a href="#/user/{{topic.user_id}}">{{topic.user}}</a> posted a topic: </h4>
