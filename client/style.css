@@ -11,10 +11,16 @@
 
 }
 
-#login {
-	color: white;
-}
+/*.container{
+	height: 100%;
+	width: 100%;
+}*/
 
 #login h1{
 	margin-top: 0px;
+	color: white
+}
+
+#login h3{
+	color: white;
 }

@@ -1,4 +1,4 @@
-<div id ="wrapper">
+<div id ="wrapper" class="container">
 
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
@@ -21,8 +21,8 @@
 
 		<div class="form-group">
 				      <!-- <label for="inputFilter" class="col-lg-2 control-label">Filter</label> -->
-				      <div class="col-lg-10">
-				        <input type="text" ng-model="filter_name" placeholder="Filter">
+				      <div class="col-lg-10" style="padding-left: 0px;">
+				        <input type="text" class="form-control" style="width:200px; height:35px;" ng-model="filter_name" placeholder="Filter">
 				      </div>
 		</div>
 
@@ -52,18 +52,19 @@
 
 		<form class="form-horizontal">
 			<fieldset>
-				<legend style="text-align: left;">Add a new Topic</legend>
-					<div class="form-group">
+				<legend>New Topic?</legend>
+
+					<div class="form-group" style="margin: auto; margin-bottom: 10px;">
 				      <label for="inputTopic" class="col-lg-2 control-label">Topic</label>
 				      <div class="col-lg-10">
-				        <input type="text" ng-model="new_topic.topic" placeholder="Enter Topic">
+				        <input type="text" class="form-control" style="width:200px; height:35px;" ng-model="new_topic.topic" placeholder="Enter Topic">
 				      </div>
 				    </div>
 
-				    <div class="form-group">
+				    <div class="form-group" style="margin: auto; margin-bottom: 10px;">
 				      <label for="inputDescription" class="col-lg-2 control-label">Description</label>
 				      <div class="col-lg-10">
-				        <textarea class="form-control" rows="3" type="text" ng-model="new_topic.description" placeholder="Enter Description"></textarea>
+				        <textarea class="form-control" rows="3" type="text" style="width:500px;" ng-model="new_topic.description" placeholder="Enter Description"></textarea>
 				      </div>
 				    </div>
 				<!-- <p>
@@ -72,10 +73,10 @@
 				<!-- <p>
 					Description: <textarea ng-model="new_topic.description"></textarea>
 				</p> -->
-				<div class="form-group">
+				<div class="form-group" style="margin: auto; margin-bottom: 10px;">
 					<label for="select" class="col-lg-2 control-label">Category</label>
 					<div class="col-lg-10">
-						<select class="form-control" id="select" ng-model="new_topic.category">
+						<select class="form-control" id="select" style="width:200px; height:35px;" ng-model="new_topic.category">
 							<option>Javascript</option>
 							<option>Node</option>
 							<option>Angular</option>
@@ -85,9 +86,9 @@
 						</select>
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group" style="margin: auto; margin-bottom: 10px;">
       				<div class="col-lg-10 col-lg-offset-2">
-						<button ng-click="createTopic(new_topic)" class="btn btn-primary">Submit</button>
+						<button ng-click="createTopic(new_topic)" class="btn btn-info">Submit</button>
 					</div>
 				</div>
 			</fieldset>

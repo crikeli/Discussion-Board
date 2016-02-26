@@ -1,4 +1,4 @@
-<div id ="wrapper">
+<div id ="wrapper" class="container">
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 
@@ -37,9 +37,9 @@
 			<p><a href="#/user/{{answer.user_id}}">{{answer.user}}</a>: {{answer.answer}}</p>
 			<div>
 				<p>({{answer.up_votes}})</p>
-				<button ng-click="upVote(topic._id, answer._id, answer.user_id)">UpVote!</button>
+				<button class="btn btn-success" ng-click="upVote(topic._id, answer._id, answer.user_id)">UpVote!</button>
 
-				<button ng-click="downVote(topic._id, answer._id, answer.user_id)">DownVote!</button>
+				<button class="btn btn-danger" ng-click="downVote(topic._id, answer._id, answer.user_id)">DownVote!</button>
 				<p>({{answer.down_votes}})</p>
 			</div>
 			<p class="comments_comments" ng-repeat="comment in answer.comments | orderBy:'created_at':'-'"><a href="#/user/{{comment.user_id}}">{{comment.user}}</a>: {{comment.comment}}</p>
