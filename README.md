@@ -12,3 +12,6 @@ To run the application locally:
 4) Start the server using the command "node server.js"
 
 5) Go to localhost:8000 and interact with the application.
+
+
+P.S. The design is a work in progress, but the back-end logic is sound and fully functional.
