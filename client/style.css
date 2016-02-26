@@ -1,0 +1,12 @@
+#container {
+	text-align: center;
+	background-image: url(https://images.unsplash.com/1/bag-and-hands.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=c7e4433b55700a7d33d63dd62f810b6f);
+	background-size: cover; 
+	width: 100%;
+	height: 100%;
+
+}
+
+#login {
+	color: white;
+}

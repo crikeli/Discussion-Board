@@ -1,8 +1,10 @@
-<html ng-app="Discussion_Board">
+<html ng-app="Discussion_Board" style="margin-top: -21px;">
 <head>
 	<title>Discussion Board</title>
 
+	<!-- <link rel="stylesheet" href="./bower_components/bootswatch/darkly/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
 
 	<!-- angular source -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -21,7 +23,7 @@
 	<script type="text/javascript" src="/ng_factories/topic_factory.js"></script>
 
 </head>
-<body>
+<body style="height:100%;">
 
 	<div ng-view="" ng-controller="usersController">
 	</div>

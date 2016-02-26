@@ -1,12 +1,18 @@
-<div id="login" style="margin-top: 10px; text-align: center;">
-		<p>Hello!</p>
-		<p>Please enter your name to join a great discussion</p>
+<div id="container">
+	<div id="login">
+		<h1>Hello!</h1>
+		<h3>Please enter your name to join great discussions</h3>
 		<form>
+			<div class="form-group">
+				<label>
+						<div class="col-lg-10">
+							<input type="text" ng-model="new_user.name" placeholder="Your Name Please">
+						</div>
+				</label>
+			</div>
 			<label>
-				<input type="text" ng-model="new_user.name">
-			</label>
-			<label>
-				<button ng-click="verifyUser(new_user)">Login</button>
+				<button ng-click="verifyUser(new_user)" class="btn btn-success btn-sm">Join</button>
 			</label>
 		</form>
 	</div>
+</div>
